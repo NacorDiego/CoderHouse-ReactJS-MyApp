@@ -5,6 +5,7 @@ import AddCartButton from '../AddCartButton/AddCartButton';
 import ProductRating from '../ProductRating/ProductRating';
 import ProductPrice from '../ProductPrice/ProductPrice';
 import ProductName from '../ProductName/ProductName';
+import './ProductCard.css';
 
 export default function MediaCard( { imgPath, model, price, rating } ) {
 
@@ -12,8 +13,8 @@ export default function MediaCard( { imgPath, model, price, rating } ) {
 
     return (
         //! SACAR EL PADDING-LEFT
-        <Grid item xs={4}>
-            <Card sx={{ width: 320 }}>
+        <Grid item xs={4} sx={{ padding: '0', display: 'flex', justifyContent: 'center' }}>
+            <Card sx={{ width: 320, marginRight: '0' }}>
                 <Box
                     sx={{
                         display: 'flex',
