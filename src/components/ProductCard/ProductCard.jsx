@@ -51,7 +51,7 @@ export default function MediaCard( { imgPath, model, price, rating } ) {
                     marginY: '15px'
                 }}>
                     <Tooltip title="Add to cart">
-                        <Button size="small" color="secondary" variant="contained" sx={{
+                        <Button size="small" variant="contained" sx={{
                             marginLeft: '8px'
                         }}>
                             <ShoppingCart fontSize="small" />
