@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Navbar from './components/Navbar/Navbar';
+import NavBar from './components/NavBar/NavBar';
 import StoreCatalog from './components/StoreCatalog/StoreCatalog';
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <NavBar />
       <StoreCatalog />
     </div>
   );

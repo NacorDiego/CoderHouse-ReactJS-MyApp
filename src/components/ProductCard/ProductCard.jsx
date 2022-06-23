@@ -1,47 +1,41 @@
 import * as React from 'react';
-import { Card, CardActions, CardContent, CardMedia, Button, Typography, Grid, Box, Tooltip, Rating } from '@mui/material';
-import ShoppingCart from '@mui/icons-material/ShoppingCart';
+import { Card, CardActions, CardContent, CardMedia, Grid, Box } from '@mui/material';
 import Counter from '../Counter/Counter';
+import AddCartButton from '../AddCartButton/AddCartButton';
+import ProductRating from '../ProductRating/ProductRating';
+import ProductPrice from '../ProductPrice/ProductPrice';
+import ProductName from '../ProductName/ProductName';
 
 export default function MediaCard( { imgPath, model, price, rating } ) {
 
+    let stock = 10;
+
     return (
-        <Grid item xs={4} sx={{
-            display: 'flex',
-            justifyContent: 'center'
-        }}>
-            <Card sx={{ width: 300 }}>
+        //! SACAR EL PADDING-LEFT
+        <Grid item xs={4}>
+            <Card sx={{ width: 320 }}>
                 <Box
                     sx={{
                         display: 'flex',
                         justifyContent: 'center'
                      }}>
-                    <CardMedia
-                        component="img"
-                        height="250"
-                        image={imgPath}
-                        alt="green iguana"
-                        margin="0"
-                        sx={{ width: '150px' }}
-                    />
+                    <CardMedia component="img" height="250" alt={`Imagen ${model}`} margin="0" image={imgPath} 
+                    sx={{ width: '150px' }}/>
                 </Box>
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        {model}
-                    </Typography>
-                    <Typography gutterBottom variant="h4" component="div" marginTop={4}>
-                        ${price}
-                    </Typography>
+                <CardContent sx={{paddingLeft: '0'}}>
+                    <Box sx={{ marginLeft: '16px', minHeight: '110px'}}>
+                        <ProductName name={model} />
+                    </Box>
+                    <ProductPrice price={price} />
                     <Box
                         marginTop={2}
                         sx={{
                             display: 'flex',
                             alignItems: 'center'
                         }}>
-                        <Rating name="read-only" value={rating} precision={0.5} readOnly />
-                        <Typography variant="body1" component="span">
-                            ({rating})
-                        </Typography>
+                        <Box sx={{ marginLeft: '16px', marginTop: '15px' }}>
+                            <ProductRating rating={rating} />
+                        </Box>
                     </Box>
                 </CardContent>
                 <CardActions sx={{
@@ -50,17 +44,8 @@ export default function MediaCard( { imgPath, model, price, rating } ) {
                     alignItems: 'center',
                     marginY: '15px'
                 }}>
-                    <Tooltip title="Add to cart">
-                        <Button size="small" variant="contained" sx={{
-                            marginLeft: '8px'
-                        }}>
-                            <ShoppingCart fontSize="small" />
-                            <Typography>
-                                +
-                            </Typography>
-                        </Button>
-                    </Tooltip>
-                    <Counter stock={10}/>
+                    <AddCartButton />
+                    <Counter stock={stock} />
                 </CardActions>
             </Card>
         </Grid>
