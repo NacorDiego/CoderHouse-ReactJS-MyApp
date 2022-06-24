@@ -1,5 +1,5 @@
 import * as React from 'react';
-import NavBar from './components/NavBar/NavBar';
+import NavBar from './components/Navbar/Navbar';
 import StoreCatalog from './components/StoreCatalog/StoreCatalog';
 
 function App() {
