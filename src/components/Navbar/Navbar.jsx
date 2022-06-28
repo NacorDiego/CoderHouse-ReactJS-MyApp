@@ -14,8 +14,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import NavMenu from '../NavMenu/NavMenu';
+import CartWidget from '../CartWidget/CartWidget';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -189,7 +189,7 @@ export default function PrimarySearchAppBar() {
               edge="end"
               color="inherit"
             >
-              <ShoppingCartIcon />
+            <CartWidget />
             </IconButton>
           </Box>
           {/* <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Card, CardActions, CardContent, CardMedia, Grid, Box } from '@mui/material';
-import Counter from '../Counter/Counter';
+import ItemCount from '../ItemCount/ItemCount';
 import AddCartButton from '../AddCartButton/AddCartButton';
 import ProductRating from '../ProductRating/ProductRating';
 import ProductPrice from '../ProductPrice/ProductPrice';
@@ -12,15 +12,14 @@ export default function MediaCard( { imgPath, model, price, rating } ) {
     let stock = 10;
 
     return (
-        //! SACAR EL PADDING-LEFT
-        <Grid item xs={4} sx={{ padding: '0', display: 'flex', justifyContent: 'center' }}>
-            <Card sx={{ width: 320, marginRight: '0' }}>
+        <Grid item className="ProductCard" xs={4} sx={{ display: 'flex', justifyContent: 'center', marginBottom: '50px' }}>
+            <Card elevation={4} sx={{ width: 320, marginRight: '0' }}>
                 <Box
                     sx={{
                         display: 'flex',
                         justifyContent: 'center'
                      }}>
-                    <CardMedia component="img" height="250" alt={`Imagen ${model}`} margin="0" image={imgPath} 
+                    <CardMedia component="img" height="250" alt={`Imagen ${model}`} margin="0" image={imgPath}
                     sx={{ width: '150px' }}/>
                 </Box>
                 <CardContent sx={{paddingLeft: '0'}}>
@@ -46,7 +45,7 @@ export default function MediaCard( { imgPath, model, price, rating } ) {
                     marginY: '15px'
                 }}>
                     <AddCartButton />
-                    <Counter stock={stock} />
+                    <ItemCount stock={stock} />
                 </CardActions>
             </Card>
         </Grid>

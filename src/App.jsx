@@ -1,12 +1,12 @@
 import * as React from 'react';
-import NavBar from './components/Navbar/Navbar';
-import StoreCatalog from './components/StoreCatalog/StoreCatalog';
+import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
     <div>
       <NavBar />
-      <StoreCatalog />
+      <ItemListContainer />
     </div>
   );
 }
